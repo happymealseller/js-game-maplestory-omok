@@ -23,4 +23,4 @@
 <b> EXTRA INFO:</b>
 <img src= https://i.postimg.cc/FHFrjgVG/wf-omok5.jpg alt= wireframe>
 <img src= https://i.postimg.cc/kGfnZ2nW/bg6.jpg alt= wireframe>
-<img src= https://i.postimg.cc/9Xv7VMjC/bg7.jpg alt= wireframe>
+<img src= https://i.postimg.cc/WbNPdmVn/bg2.jpg alt= wireframe>
