@@ -20,8 +20,7 @@
 </ul>
 
 #
-
 <b> EXTRA INFO:</b>
 <img src= https://i.postimg.cc/FHFrjgVG/wf-omok5.jpg alt= wireframe>
 <img src= https://i.postimg.cc/kGfnZ2nW/bg6.jpg alt= wireframe>
-<img src= https://i.postimg.cc/G34NBMTd/bg7.jpg alt= wireframe>
+<img src= https://i.postimg.cc/9Xv7VMjC/bg7.jpg alt= wireframe>
