@@ -1,0 +1,591 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Luckiest+Guy&family=Mukta:wght@200&family=Roboto+Mono&display=swap");
+
+/*===== BG / MAP CONTROLS ===== */
+.control-container {
+  width: 98.4vh;
+  display: flex;
+  justify-content: flex-end;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-top: ridge 0.2vmin rgb(70, 90, 105);
+  border-left: ridge 0.2vmin rgb(70, 90, 105);
+  border-right: ridge 0.2vmin rgb(70, 90, 105);
+}
+
+.control-btn {
+  font-family: "Roboto Mono", monospace;
+  color: black;
+  background: linear-gradient(
+    180deg,
+    rgb(30, 30, 30) 0%,
+    rgb(255, 255, 15) 35%,
+    rgb(125, 125, 5) 100%
+  );
+  border: 0.1vmin solid black;
+  border-radius: 0.2vmin;
+  font-size: 0.8vmin;
+  font-weight: bolder;
+  height: 2vmin;
+  width: 6vmin;
+  margin: 0.2vmin;
+}
+
+.control-btn:hover {
+  background: linear-gradient(
+    180deg,
+    rgb(30, 30, 30) 0%,
+    rgb(230, 230, 0) 25%,
+    rgb(75, 75, 0) 180%
+  );
+}
+
+/*===== HIDDEN BUTTONS  ===== */
+.control1-btn,
+.control2-btn,
+.control3-btn {
+  font-family: "Roboto Mono", monospace;
+  color: black;
+  border: 0.1vmin solid black;
+  border-radius: 0.2vmin;
+  font-size: 0.8vmin;
+  font-weight: bolder;
+  height: 2vmin;
+  width: 6vmin;
+  margin: 0.2vmin;
+  display: none;
+}
+
+.control1-btn {
+  background: linear-gradient(
+    180deg,
+    rgb(30, 30, 30) 0%,
+    rgb(40, 200, 20) 35%,
+    rgb(5, 70, 20) 100%
+  );
+}
+
+.control2-btn {
+  background: linear-gradient(
+    180deg,
+    rgb(30, 30, 30) 0%,
+    rgb(0, 210, 255) 35%,
+    rgb(0, 80, 140) 100%
+  );
+}
+
+.control3-btn {
+  background: linear-gradient(
+    180deg,
+    rgb(30, 30, 30) 0%,
+    rgb(225, 80, 10) 35%,
+    rgb(175, 60, 5) 100%
+  );
+}
+
+.control1-btn:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(30, 30, 30, 0.8) 0%,
+    rgba(40, 200, 20, 0.8) 35%,
+    rgba(5, 70, 20, 0.8) 100%
+  );
+}
+
+.control2-btn:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(30, 30, 30, 0.8) 0%,
+    rgba(0, 210, 255, 0.8) 35%,
+    rgba(0, 80, 140, 0.8) 100%
+  );
+}
+
+.control3-btn:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(30, 30, 30, 0.8) 0%,
+    rgba(225, 80, 10, 0.8) 35%,
+    rgba(175, 60, 5, 0.8) 100%
+  );
+}
+
+/*===== BACKGROUND ===== */
+.background-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 98vh;
+  background-image: url("./src/img/bg1.jfif");
+  background-color: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  overflow: hidden;
+}
+
+/*===== MAIN ===== */
+.main-container {
+  display: flex;
+  justify-content: center;
+  height: 62.5vh;
+  border: ridge 0.2vmin rgb(70, 90, 105);
+  overflow: hidden;
+}
+
+/*===== GAME CONTAINER ===== */
+.game-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas: "board" "timer";
+  height: 62.5vh;
+  background-color: white;
+  border-top: ridge 0.2vmin rgb(110, 140, 170);
+}
+
+/*===== BOARD CONTAINER ===== */
+.board-container {
+  grid-area: board;
+  height: 53.5vh;
+  margin: 2vh;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(19, 1fr);
+  border: ridge 0.2vmin rgb(175, 195, 220);
+  max-width: 53.1vmin;
+}
+
+.game-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 53.2vmin;
+  height: 53.2vmin;
+}
+
+.game-status-msg {
+  font-family: "Luckiest Guy", cursive;
+  color: white;
+  background: linear-gradient(
+    330deg,
+    rgb(155, 60, 50) 5%,
+    rgba(135, 40, 20, 1) 30%,
+    rgba(80, 10, 10, 1) 70%
+  );
+  border: ridge 0.5vmin rgb(255, 195, 30);
+  border-radius: 0.5vmin;
+  padding: 1.5vmin 8vmin 1.5vmin 8vmin;
+  transform: rotate(-5deg);
+  text-align: center;
+  font-size: 4vmin;
+  text-shadow: 0.15vmin 0.15vmin rgb(200, 120, 10);
+}
+
+.game-square {
+  display: flex;
+  justify-content: center;
+  border: ridge 0.15vmin rgb(220, 235, 250);
+}
+
+.game-square,
+.game-piece-slime,
+.game-piece-mushroom {
+  width: 2.5vmin;
+  height: 2.5vmin;
+}
+
+.game-square:hover {
+  background-color: rgb(220, 235, 250);
+}
+
+/*===== TIMER CONTAINER ===== */
+.timer-container {
+  grid-area: timer;
+  display: flex;
+  justify-content: space-between;
+  height: 2vh;
+  padding: 0.1vmin 1vmin 0.8vmin 1vmin;
+  border-top: ridge 0.2vmin rgb(110, 140, 170);
+}
+
+.turn-text,
+.timer-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-top: 2.5vmin;
+  font-size: 1.35vmin;
+}
+
+/*===== INFO CONTAINER ===== */
+.info-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, auto);
+  grid-template-areas: "title" "player" "ready" "chat" "input" "btn";
+  height: 62.5vh;
+  background-color: white;
+  border-left: ridge 0.2vmin rgb(70, 90, 105);
+}
+
+/*===== TITLE CONTAINER ===== */
+.title-container {
+  grid-area: title;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 4vh;
+  border-top: ridge 0.2vmin rgb(110, 140, 170);
+}
+
+.minigame-text {
+  font-family: "Roboto Mono", monospace;
+  height: 2.8vmin;
+  font-size: 0.9vmin;
+  background-color: white;
+  margin: 0.5vmin 0 0 0.5vmin;
+  padding: 0 2.5vmin 0.25vmin 0.25vmin;
+  border: ridge 0.1vmin rgb(175, 195, 220);
+}
+
+.title-text {
+  font-family: "Mukta", sans-serif;
+  width: 100%;
+  height: 2vmin;
+  font-size: 1.5vmin;
+  background-color: rgb(175, 195, 220);
+  margin: 0.5vmin 0.5vmin 0 0.25vmin;
+  padding-bottom: 0.3vmin;
+  padding-left: 0.75vmin;
+  border: ridge 0.1vmin rgb(110, 140, 170);
+}
+
+/*===== PLAYER CONTAINER ===== */
+.player-container {
+  grid-area: player;
+  display: flex;
+  justify-content: space-between;
+  min-height: 22vh;
+  border-top: ridge 0.2vmin rgb(110, 140, 170);
+  border-bottom: ridge 0.2vmin rgb(110, 140, 170);
+}
+
+.player-1,
+.player-2,
+.player-3,
+.player-4 {
+  background-color: white;
+  margin: 0.25vmin;
+}
+
+.player0-img,
+.player1-img,
+.player2-img {
+  height: 10vh;
+  width: 9.5vmin;
+}
+
+.player-img,
+.player-img-2,
+.player-img-3,
+.player-img-4 {
+  background-color: rgb(175, 195, 220);
+  border: ridge 0.1vmin rgb(110, 140, 170);
+}
+
+.player-name,
+.player-name-2,
+.player-name-3,
+.player-name-4 {
+  height: 1.6vh;
+  text-align: center;
+  font-size: 1.2vmin;
+  background-color: rgb(113, 147, 170);
+  padding-top: 0.25vmin;
+  border-top: ridge 0.1vmin white;
+  border-bottom: ridge 0.1vmin white;
+}
+
+.player-points,
+.player-points-2,
+.player-points-3,
+.player-points-4 {
+  padding-top: 0.25vmin;
+  padding-right: 0.1vmin;
+  font-family: "Roboto Mono", monospace;
+  text-align: right;
+  font-size: 1vmin;
+  border-top: ridge 0.1vmin rgb(110, 140, 170);
+  border-left: ridge 0.1vmin rgb(110, 140, 170);
+  border-right: ridge 0.1vmin rgb(110, 140, 170);
+  height: 1.6vh;
+}
+
+.player-record,
+.player-record-2,
+.player-record-3,
+.player-record-4 {
+  font-family: "Roboto Mono", monospace;
+  padding-top: 0.25vmin;
+  padding-right: 0.2vmin;
+  text-align: right;
+  font-size: 1.2vmin;
+  border: ridge 0.1vmin rgb(110, 140, 170);
+  height: 5vh;
+}
+
+/*===== READY CONTAINER ===== */
+.ready-container {
+  grid-area: ready;
+  height: 5vh;
+  margin-top: 0.25vmin;
+  border-bottom: ridge 0.2vmin rgb(110, 140, 170);
+}
+
+.ready-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ready {
+  font-family: "Kanit", sans-serif;
+  width: 30%;
+  height: 3.5vh;
+  background: linear-gradient(
+    310deg,
+    rgb(88, 88, 88) 15%,
+    rgb(187, 187, 187) 100%
+  );
+  color: silver;
+  font-size: 2vmin;
+  font-weight: bold;
+  text-shadow: 0.15vmin 0.15vmin black;
+  border-radius: 0.4vmin;
+  border: 0.2vmin ridge black;
+  margin: 0.8vmin 1vmin 0.5vmin 0;
+}
+
+/*===== CHAT CONTAINER ===== */
+.chat-container {
+  grid-area: chat;
+  height: 23vh;
+}
+
+.chat-box {
+  margin: 0.5vmin;
+  border: 0.2vmin solid rgb(73, 73, 73);
+  background-color: rgb(34, 34, 34);
+  height: 22vh;
+  padding-top: 0.25vmin;
+  padding-left: 0.5vmin;
+  color: greenyellow;
+  font-size: 1.3vmin;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/*===== INPUT CONTAINER ===== */
+.input-container {
+  grid-area: input;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 3.5vh;
+  border-bottom: ridge 0.2vmin rgb(110, 140, 170);
+}
+
+.input-box {
+  margin: 0.45vmin 0.5vmin 0.5vmin 0.5vmin;
+  border: ridge 0.2vmin rgb(110, 140, 170);
+  border-radius: 0.25vmin;
+  background-color: rgb(220, 235, 250);
+  height: 2vh;
+  width: 65%;
+  padding-top: 0.25vmin;
+  padding-left: 0.5vmin;
+  font-size: 1.35vmin;
+}
+
+.input-box:focus {
+  outline: none;
+}
+
+/*===== GAME BTN CONTAINER ===== */
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  grid-area: btn;
+  height: 3.2vh;
+  margin-top: 0.35vmin;
+}
+
+.btn-blue {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 1vmin;
+  height: 2.5vh;
+}
+
+.giveup,
+.draw,
+.redo {
+  color: aliceblue;
+  background: linear-gradient(
+    180deg,
+    rgb(30, 30, 30) 0%,
+    rgb(0, 210, 255) 35%,
+    rgb(0, 80, 140) 100%
+  );
+  border: 0.2vmin solid black;
+  border-radius: 0.2vmin;
+  font-size: 0.8vmin;
+  font-weight: bold;
+  height: 2vmin;
+  width: 5vmin;
+  margin: 0.2vmin;
+}
+
+.giveup {
+  margin-left: -0.45vmin;
+}
+
+.giveup:hover,
+.draw:hover,
+.redo:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(30, 30, 30, 0.8) 0%,
+    rgba(0, 210, 255, 0.8) 35%,
+    rgba(0, 80, 140, 0.8) 100%
+  );
+}
+
+.btn-red {
+  display: flex;
+  align-items: center;
+  margin-right: 1vmin;
+  height: 2.5vh;
+}
+
+.exit {
+  color: aliceblue;
+  background: linear-gradient(
+    180deg,
+    rgb(30, 30, 30) 0%,
+    rgb(225, 80, 10) 35%,
+    rgb(175, 60, 5) 100%
+  );
+  border: 0.2vmin solid black;
+  border-radius: 0.2vmin;
+  font-size: 0.8vmin;
+  font-weight: bold;
+  height: 2vmin;
+  width: 5vmin;
+}
+
+.exit:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(30, 30, 30, 0.8) 0%,
+    rgba(225, 80, 10, 0.8) 35%,
+    rgba(175, 60, 5, 0.8) 100%
+  );
+}
+
+/*===== MOBILE PORTRAIT ===== */
+@media all and (min-width: 50px) and (max-width: 600px) {
+  .control-container {
+    width: auto;
+    padding: 0.5vmin 1vmin 0.5vmin 1vmin;
+    justify-content: center;
+  }
+
+  .control-btn,
+  .control1-btn,
+  .control2-btn,
+  .control3-btn {
+    font-size: 0.55vmin;
+    width: 6vmin;
+    display: inline;
+  }
+
+  .background-container {
+    background-size: cover;
+  }
+
+  .main-container {
+    height: 70vmin;
+  }
+
+  .game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70vmin;
+  }
+
+  .board-container {
+    width: 53.2vmin;
+  }
+
+  .game-status {
+    width: 53.2vmin;
+  }
+
+  .game-square,
+  .game-piece-slime,
+  .game-piece-mushroom {
+    width: 2.25vmin;
+    height: 2.25vmin;
+  }
+
+  .info-container {
+    display: none;
+  }
+}
+
+/*===== MOBILE LANDSCAPE ===== */
+@media all and (min-height: 50px) and (max-height: 500px) {
+  .game-square,
+  .game-piece-slime,
+  .game-piece-mushroom {
+    width: 2.25vmin;
+    height: 2.25vmin;
+  }
+
+  .game-board {
+    width: 53.2vmin;
+  }
+
+  .game-status {
+    width: 53.2vmin;
+  }
+
+  .ready-container {
+    margin-top: -0.1vmin;
+  }
+
+  .ready {
+    font-size: 1.65vmin;
+  }
+
+  .input-box {
+    margin: 0.1vmin 0.5vmin 0.5vmin 0.5vmin;
+  }
+
+  .control-btn,
+  .giveup,
+  .draw,
+  .redo {
+    font-size: 0.55vmin;
+    width: 6vmin;
+    margin: 0.5px;
+  }
+
+  .giveup {
+    margin-left: -0.5vmin;
+  }
+}
